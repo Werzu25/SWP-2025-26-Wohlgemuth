@@ -16,7 +16,7 @@ elif a == 5:
 else:
     print("a less than 5")
 
-for i in range(a):
+for i in range(5,20,3):
     print(i)
 x = 0
 while x < 20:
@@ -31,3 +31,5 @@ while x < 20:
         pass
     x += 1
     print(x)
+
+list1 = [1,2,3,4,5]
