@@ -131,8 +131,14 @@ def draw_cards(cards, num_draws, print = False):
 
 
 if __name__ == "__main__":
-    num_plays = int(input("Number plays:"))
-    num_draws = int(input("Number draws:"))
+    default_val_plays = 100_000
+    default_val_draws = 5
+
+    input_str = input("Number plays:")
+    num_plays = int(input_str) if type(input_str) is int else default_val_plays
+
+    input_str = input("Number draws:")
+    num_draws = int(input_str) if type(input_str) is int else default_val_draws
     
     cards = generate_cards()
 
@@ -147,6 +153,7 @@ if __name__ == "__main__":
         #print(result.name)
         resulting_combinations.append(result)
         del combinations
-    
+
     for object in CombinationType:
         print(f"{object.name} Probability: {((resulting_combinations.count(object))/num_plays)*100}%")
+        #print("ROYAL FLUSH!!!!!") if resulting_combinations.count(CombinationType.Rolal_Flush) > 0 else None
